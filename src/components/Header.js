@@ -18,7 +18,7 @@ function Header() {
             variant="h6"
             noWrap
             component="a"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/eway-clone")}
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },

@@ -227,7 +227,6 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
     });
 
     let saveDataFromLocal = JSON.parse(localStorage.getItem("saveData"));
-    console.log("saveDataFromLocal", saveDataFromLocal);
 
     if (
       finalCategoryData.length > 0 &&
@@ -347,7 +346,9 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
           icon={<ArrowBackIcon />}
           label="Back"
           onClick={() =>
-            isFromLogin && showCategory ? navigate("/") : handleBackClick()
+            isFromLogin && showCategory
+              ? navigate("/eway-clone")
+              : handleBackClick()
           }
           color="primary"
           variant="outlined"
