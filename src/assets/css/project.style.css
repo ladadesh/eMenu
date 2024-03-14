@@ -1,0 +1,683 @@
+/* ===================== */
+/*App main CSS
+/* ===================== */
+
+/*curveborder for city*/
+.curvedBorder1{
+    position: relative;
+    top: -6px;
+    left: 7px;
+    height: 20px;
+    width: 20px;
+    border-top: 6px solid #4267b2;
+    border-right: 6px solid #4267b2;
+    border-radius: 0px 20px 0px 0px;
+    }
+    .curvedBorder2{
+    position: relative;
+    top: -6px;
+    left: -7px;
+    height: 20px;
+    width: 20px;
+    border-top: 6px solid #4267b2;
+    border-left: 6px solid #4267b2;
+    border-radius: 20px 0px 0px 0px;
+    }
+    
+    /*window css
+    ***************/
+    @media(min-width:750px){/*min - morethan*/
+      .appuserx {
+          margin-left: 10%;
+          width: 80%;
+      }
+    }
+    @media(max-width:750px){/*less - lessthan*/
+      .header-adminx{
+        display: none;
+      }
+      .footerx{
+        display: none;
+      }
+      .cityimagelesspadding{
+        padding-top:0px !important;
+      }
+      .imagelesspaddingfromtopnone{
+        padding-top:0px !important;
+      }
+      .storemenuimagelesspadding{
+        padding-top:8px !important;
+      }
+    }
+    
+    .oldfirstvarclass{
+        position:fixed !important;
+        bottom:0px;
+        left:0px;
+        width:100% !important;
+        max-height:80% !important;
+        z-index:100;
+        margin:0px !important;
+        border-radius:0px !important;
+        border-top:2px solid #4267b2 !important;
+        border-right:0px solid #4267b2 !important;
+        border-bottom:0px solid #4267b2 !important;
+        border-left:0px solid #4267b2 !important;
+        overflow-y:auto !important;
+    }
+    
+    /*home.php desctop css
+    **********************/
+    .storeLiParent{
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 80px;
+    }
+    .storeLiParentRecent{
+      display: none;
+    }
+    .storeLiParentSponsored{
+      /*display: none;*/
+    }
+    .verified{
+      display: none;
+    }
+    .storeLiA{
+      width: 30%;
+      margin-right: 16px;
+    }
+    .storeLi{
+      width: 100%;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .mstoreLiRatting{
+      border-radius: 8px 0px 0px 8px;
+      position: absolute;
+      top: 32px;right: 0px;
+      background-image: linear-gradient(#16b,#2d8cec);
+      background-color: #16b;
+      border-color: #16b #0b4075 #0b4075;
+      height: 20px;
+      width: 76px;
+      border:none;
+      margin: 0px;
+      padding: 2px 0px 0px 0px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    }
+    .mstoreLiOpenClose{
+      border-radius: 0px 8px 0px 8px;
+      position: absolute;
+      top: 0;right: 0;
+      background-color: #08ea68;
+      background-image: linear-gradient(147deg, #08ea68 0%, #03af42 50%, #029039 100%);
+      height:26px ;
+      width:120px;
+      border:none;
+      margin: 0px;
+      padding: 0px 0px 2px 0px;
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    }
+    .showSelectedDivOutlineStore{
+      width:100% !important;
+    }
+    .mstoreLiDivDiv2{
+      letter-spacing: 0.2px;
+      padding: 0px 0px 0px 2px;
+      color: rgba(0,0,0,.56);
+      display:block;
+      flex: 4 1 0;
+      flex-direction: column;
+      justify-content: space-between;
+      line-height: 20px;
+      min-width: 0;
+      font-family: Roboto, HelveticaNeue, Arial, sans-serif;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .mstoreLiDivDiv2Name{
+      font-family: Arial, Helvetica, sans-serif;
+      white-space: nowrap;
+      display: inline;
+      font-size: 1.8rem;
+      line-height: 1.5;
+      color: rgb(28, 28, 28);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .mstoreLiDivDiv2NameLi1{
+      display:flex;
+    }
+    .mstoreLiDivDiv2NameLi2{
+      margin-top:10px;
+      display:flex;
+    }
+    .mstoreLiDivDiv2NameLi1 img{
+      height:26px;
+    }
+    .mstoreLiDivDiv2NameLi2 img{
+      height:26px;
+    }
+    .mstoreLiDivDiv2NameLi1 div{
+      margin:0px 0px 0px 1px;
+      white-space: nowrap;
+      display: inline;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      font-weight: 400;
+      text-decoration: none;
+    }
+    .mstoreLiDivDiv2NameLi2 div{
+      margin:0px 0px 0px 1px;
+      white-space: nowrap;
+      display: inline;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      font-weight: 400;
+      text-decoration: none;
+    }
+    .mstoreLiDivDiv2NameLi2 span{
+      margin:0px 0px 0px 1px;
+      white-space: nowrap;
+      display: inline;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      font-weight: 400;
+      text-decoration: none;
+    }
+    .mstoreLiDivDiv2NameLiOpenClose{
+      margin-top:16px;
+    }
+    .mstoreLiDivDiv2NameLiOpenClose div{
+      margin:6px 0px 0px 6px;
+      font-size:16px;
+      font-weight:bold;
+    }
+    .mstoreLiDivDiv2NameVerified{
+      max-width: 100%;
+      margin:0px 0px 0px 0px;
+    }
+    .mstoreLiDivDiv2NameVerified div{
+      margin:8px;
+      font-size:16px;
+      font-weight:bold;
+      color:#cccccc;
+    }
+    
+    /*home.php mobile css
+    **********************/
+    @media(max-width:700px){/*less - lessthan*/
+      .storeLiParent{
+        display: block;
+        margin-left: 0px;
+      }
+      .storeLiParentRecent{
+        display: block;
+        margin-left: 0px;  
+      }
+      .storeLiParentSponsored{
+        display: block;
+        margin-left: 0px;   
+      }
+      .verified{
+        display: block;
+        margin-left: 0px;   
+      }
+      .storeLiA{
+        width: auto;
+        margin-right: 0px;
+      }
+      .storeLi{
+        width: 100%;
+        display: block;
+        position: relative;
+        margin-bottom: 0px;
+      }
+      .mstoreLiOpenClose{
+        border-radius: 0px 8px 0px 8px;
+        position: absolute;
+        top: 0;right: 0;
+        background-color: #08ea68;
+        background-image: linear-gradient(147deg, #08ea68 0%, #03af42 50%, #029039 100%);
+        height:26px ;
+        width:120px;
+        border:none;
+        margin: 0px;
+        padding: 0px 0px 2px 0px;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+      }
+      .showSelectedDivOutlineStore{
+        width:100% !important;
+      }
+      .mstoreLiDivDiv2{
+        height: 76px;
+        background: linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));
+        box-sizing: border-box;
+        color: white;
+        display: block;
+        padding: 16px;
+        width: 100%;
+        position: absolute;
+        bottom:8px;
+        left:0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        border-radius: 0px 0px 8px 8px;
+      }
+      .mstoreLiDivDiv2Name{
+        width:60%;
+        color: white;
+        margin:0px 0px 0px 0px;
+        letter-spacing: normal;
+        font-size:18px;
+        font-weight: 700;
+        font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+      }
+      .mstoreLiDivDiv2NameLi1{
+        display: block;
+        margin: 0;
+      }
+      .mstoreLiDivDiv2NameLi2{
+        display:none;
+      }
+      .mstoreLiDivDiv2NameLi1 img{
+        display: none;
+      }
+      .mstoreLiDivDiv2NameLi2 img{
+        display: none;
+      }
+      .mstoreLiDivDiv2NameLi1 div{
+        margin:4px 0px 0px 0px;
+        color:white;
+        font-size:13px;
+        font-weight: 700;
+        font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+      }
+      .mstoreLiDivDiv2NameLi2 div{
+        margin:4px 0px 0px 6px;
+        font-size:17px;
+      }
+      .mstoreLiDivDiv2NameLiOpenClose{
+        display: none;
+      }
+      .mstoreLiDivDiv2NameLiOpenClose div{
+        margin:6px 0px 0px 6px;
+        font-size:16px;
+        font-weight:bold;
+      }
+      .mstoreLiDivDiv2NameVerified{
+        display: none;
+      }
+    }
+    
+    /*home.php navbar desctop & mobile css
+    **************************************/
+    .navBar {
+        padding: 16px 16px 16px 8px;
+        width: 40%;
+        background-color: #5b6fd6;
+        background-image: linear-gradient(270deg, #5b6fd6 0%, #C850C0 22%, #FFCC70 49%, #ffffff 75%, #ffffff 100%);
+        margin: 8px 0px 10px 0px;
+        border-radius: 8px;
+    }
+    @media(min-width:1000px){/*More - Morethan*/
+      .navBar {
+        position: fixed;
+        z-index: 10;
+        top: 16px;
+        right: 16px;
+        float: right;
+        padding: 0px;
+        width: 280px;
+        background-color: #ffffff;
+        margin: 0px;
+        border-radius: 123px;
+      }
+    }
+    @media(max-width:1000px){/*less - lessthan*/
+      .navBar {
+          width: 50%;
+      }
+    }
+    @media(max-width:600px){/*less - lessthan*/
+      .navBar {
+          width: 100%;
+      }
+    }
+    .appCatagoryDiv {
+        background-color: white;
+        height: 72px;
+        width: 100%;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+    .appCatagoryDivImage {
+        position: relative;
+        top: 4px;
+        left: 4px;
+        width: 64px;
+        height: 64px;
+        border-radius: 100px;
+        object-fit: cover;
+    }
+    .appCatagoryDivImageP1 {
+        position: relative;
+        top: -54px;
+        left: 81px;
+        width: 60%;
+        font-size: 20px !important;
+    }
+    .appCatagoryDivImageP2 {
+      position: relative;
+      top: -62px;
+      left: 82px;
+      width: 100%;
+      font-size: 13px !important;
+      color: #525252 !important;
+    }
+    
+    /*home.php navbar catagory popup desctop & mobile css
+    *****************************************************/
+    .transperentBlackCatagoryDiv{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.72);
+      width: 100%;
+      height: 100%;
+      z-index: 2147483647;
+      opacity: 100;
+    }
+    .transperentBlackCatagoryBox{
+      margin: 0px auto 0px auto;
+      width:400px;
+      height: 80%;
+      transform-origin: right top;transform: scale(1);
+      opacity: 1;
+      background-color: #fff;
+      border-radius: 3px;
+      padding: 9px 0px 9px 12px;
+      z-index: 10000;
+      overflow-y: auto;
+    }
+    @media(max-width:700px){/*less - lessthan*/
+      .transperentBlackCatagoryBox{
+        height: 100%;
+        width:100%;
+      }
+    }
+    
+    /*rattingButtonPopup
+    **********************/
+    .rattingButtonPopup{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      padding: 20px 20px 20px 20px;
+      background: rgba(0, 0, 0, 0.72);
+      width: 100%;
+      height: 100%;
+      z-index: 2147483647;
+      opacity: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .rattingButtonDiv{
+      margin: 0px auto 0px auto;
+      width:280px;
+      height: 200px;
+      transform-origin: right top;transform: scale(1);
+      opacity: 1;
+      background-color: #fff;
+      border-radius: 3px;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.26), 0 2px 10px 0 rgba(0,0,0,.16);
+      padding: 9px 20px;
+      z-index: 10000;
+      overflow-y: auto;
+    }
+    
+    /*countsButtonPopup
+    **********************/
+    .commanPopup{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      padding: 150px 0px 0px 0px;
+      background: rgba(0, 0, 0, 0.72);
+      width: 100%;
+      height: 100%;
+      z-index: 2147483647;
+      opacity: 100;
+    }
+    .countsButtonPopup{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      padding: 150px 0px 0px 0px;
+      background: rgba(0, 0, 0, 0.72);
+      width: 100%;
+      height: 100%;
+      z-index: 2147483647;
+      opacity: 100;
+    }
+    .storeDetailPopup{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      padding: 150px 0px 0px 0px;
+      background: rgba(0, 0, 0, 0.72);
+      width: 100%;
+      height: 100%;
+      z-index: 2147483647;
+      opacity: 100;
+    }
+    .productDetailPopup{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      padding: 150px 0px 0px 0px;
+      background: rgba(0, 0, 0, 0.72);
+      width: 100%;
+      height: 100%;
+      z-index: 2147483647;
+      opacity: 100;
+    }
+    .countsButtonDiv{
+      margin: 0px auto 0px auto;
+      height: 90%;
+      width:400px;
+      transform-origin: right top;transform: scale(1);
+      opacity: 1;
+      background-color: #fff;
+      border-radius: 3px;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.26), 0 2px 10px 0 rgba(0,0,0,.16);
+      padding: 9px 20px;
+      z-index: 10000;
+      overflow-y: auto;
+    }
+    @media(max-width:700px){/*less - lessthan*/
+      .countsButtonDiv{
+        height: 100%;
+        width:100%;
+        border-radius: 16px 16px 0px 0px;
+      }
+    }
+    
+    /*commentsandratlist
+    **********************/
+    .commentsParent{
+      padding:8px;
+      overflow: hidden;
+      font-size: 17.666px;
+      background: rgb(226,255,199);
+      border: 1px solid #dce7ff;
+      border-radius:8px;
+      min-width:60%;
+      max-width:90%;
+      margin:0px 0px 16px 0px;
+      font-family: Helvetica,Arial,sans-serif;
+      font-weight: 500;
+      position:relative;
+    }
+    .commentsChild1{
+      color:rgb(136,154,114);
+      font-weight:bold;
+      margin-bottom: 8px;
+      padding-bottom: 2px;
+      font-size:14.4444px;
+      position:relative;
+      top:0px;
+      left:0px;
+      display:flex;
+      justify-content: space-between;
+    }
+    .commentsChild2{
+      font-weight: 500;
+      font-size: 1.5rem;
+      font-family: system-ui;
+      color:#414141;
+    }
+    
+    /*commentnratingButtonPopup
+    **********************/
+    .commentnratingButtonPopup{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      background: rgba(0, 0, 0, 0.72);
+      width: 100%;
+      height: 100%;
+      z-index: 2147483647;
+      opacity: 100;
+    }
+    .commentnratingButtonnDiv{
+      margin: 0px auto 0px auto;
+      height: 160px;
+      width:670px;
+      background-color: #fff;
+      padding: 9px 20px;
+      z-index: 10000;
+      border-radius: 8px 8px 0px 0px;
+    }
+    @media(max-width:700px){/*less - lessthan*/
+      .commentnratingButtonnDiv{
+        width:100%;
+        border-radius: 0px;
+      }
+      .commentnratingButtonPopup{
+        align-items: flex-start !important;
+      }
+    }
+    
+    /*rating css
+    **********************/
+    .ratebox{
+      display:flex;
+      width:100%;
+      position: relative;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .ratebox input{
+      display:none;
+    }
+    .ratebox label{
+      display: block;
+      cursor: pointer;
+    }
+    .ratebox label:before{
+      content: '★';
+      position: relative;
+      display: block;
+      font-size:50px;
+      color: #ccc;
+    }
+    .ratebox label:after{
+      content: '★';
+      position: absolute;
+      top: 0;
+      display: block;
+      font-size:50px;
+      color: #333;
+      opacity: 0;
+      transition: .5s;
+      text-shadow: 0 2px 5px rgba(0,0,0,-5);
+    }
+    .ratebox label:hover:after,
+    .ratebox input:hover ~ label:after,
+    .ratebox input:checked ~ label:after{
+      opacity: 1;
+    }
+    
+    /*Update popup
+    **********************/
+    .updatePopup{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      padding: 20px 20px 20px 20px;
+      background: rgba(0, 0, 0, 0.72);
+      width: 100%;
+      height: 100%;
+      z-index: 2147483647;
+      opacity: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /*windowmenu
+    **********************/
+    @media(max-width:900px){/*less - lessthan*/
+      .windowmenu{
+        display:none;
+      }
+    }
+    @media(min-width:900px){/*more - morethan*/
+      .storedetailhotelenameabove900{
+        padding-right:320px !important;
+      }
+    }
+    
+    /*For Youtube Embded Code
+    **********************/
+    .iframe-container{
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; 
+      height: 0;
+      margin-bottom:10px;
+      background:rgb(255, 0, 0);
+      border-radius: 8px;
+    }
+    .iframe-container iframe{
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+    
+    /*next css
+    **********************/
+    
+    /* ===================== */
+    /*App main CSS
+    /* ===================== */
+    

@@ -1,0 +1,78 @@
+[
+    {
+        "userName": "Mumbai01",
+        "password": "Mumbai@123"
+    },
+    {
+        "userName": "Mumbai02",
+        "password": "Luxury@456"
+    },
+    {
+        "userName": "Mumbai03",
+        "password": "City@789"
+    },
+    {
+        "userName": "Mumbai04",
+        "password": "Harbor@101"
+    },
+    {
+        "userName": "Mumbai05",
+        "password": "Sunshine@202"
+    },
+    {
+        "userName": "Pune01",
+        "password": "Pune@123"
+    },
+    {
+        "userName": "Pune02",
+        "password": "Pune@456"
+    },
+    {
+        "userName": "Pune03",
+        "password": "Pune@789"
+    },
+    {
+        "userName": "Pune04",
+        "password": "Pune@101"
+    },
+    {
+        "userName": "Delhi01",
+        "password": "Delhi@123"
+    },
+    {
+        "userName": "Delhi02",
+        "password": "Delhi@456"
+    },
+    {
+        "userName": "Delhi03",
+        "password": "Delhi@789"
+    },
+    {
+        "userName": "Chennai01",
+        "password": "Chennai@123"
+    },
+    {
+        "userName": "Chennai02",
+        "password": "Chennai@456"
+    },
+    {
+        "userName": "Bangalore01",
+        "password": "Bangalore@123"
+    },
+    {
+        "userName": "Hyderabad01",
+        "password": "Hyderabad@123"
+    },
+    {
+        "userName": "Nagpur01",
+        "password": "Nagpur@123"
+    },
+    {
+        "userName": "Bhopal01",
+        "password": "Bhopal@123"
+    },
+    {
+        "userName": "Manali01",
+        "password": "Manali@123"
+    }
+]

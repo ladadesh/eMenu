@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Header from './components/Header';
+import {BrowserRouter as Router , Route, Routes} from "react-router-dom"
+import Home from "./components/Home";
+import Emenu from './components/Emenu';
+import StoreLogin from './components/StoreLogin';
+import ApplyStore from './components/ApplyStore';
+import QRCode from './components/QRCode';
+import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CssBaseline />
+      <Router>
+      <Header />
+        <Routes>
+          <Route path='/' exact={true} Component={Home} />  
+          <Route path="/qr" Component={QRCode} />
+          <Route path="/list" Component={Emenu} />
+          <Route path="/login" Component={StoreLogin} />
+          <Route path="/apply" Component={ApplyStore} />
+        </Routes>
+      </Router>
+      </>
   );
 }
 

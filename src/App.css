@@ -1,38 +1,63 @@
-.App {
+.body{
+  margin: 0;
+}
+
+.home button,a{
+  border: none !important;
+}
+
+.card--image{
+  background-size: cover !important;
+}
+
+.construction-container {
   text-align: center;
+  margin: 15% auto;
+  max-width: 400px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+  font-size: 8rem;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  color: #1976d2; /* Choose a color that fits your site's design */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.back-icon{
+  position: sticky !important;
+  margin-top: 20px !important ;
+  margin-left: 20px !important;
+  margin-bottom: -30px !important;
+  background-color: white !important;
+  top: 10% !important;
+  z-index: 999 !important;
 }
 
-.App-link {
-  color: #61dafb;
+.cart-icon{
+  color: rgb(255, 153, 0) !important;
+  position: fixed !important;
+  top: 0px !important;
+  right: 0px !important;
+  z-index: 9999 !important;
+  margin: 15px !important;
+  background-color: white !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-icon{
+  position: fixed !important;
+  margin-top: 10px !important ;
+  margin-left: 20px !important;
+  margin-right: 10px !important;
+  background-color: white !important;
+  top: 10% !important;
+  z-index: 999 !important;
+  right : 0 !important
+}
+
+.css-7dv1rb-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab {
+  background-color: #ff9900 !important;
+  height: 50px !important;
+  width: 50px !important;
 }

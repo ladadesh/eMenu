@@ -1,0 +1,265 @@
+[
+    {
+        "cityName": "Mumbai",
+        "cityImg" : "https://www.savaari.com/blog/wp-content/uploads/2021/12/1024px-Mumbai_Aug_2018_43397784544.jpg",
+        "hotelList": [
+            {
+                "hotelName": "The Great Hotel",
+                "hotelAddress": "Juhu, Mumbai",
+                "hotelUserName": "Mumbai01",
+                "hotelPassword": "Mumbai@123",
+                "hotelState": "Maharashtra",
+                "hotelPincode": "400001",
+                "hotelImg": "https://media.istockphoto.com/id/104731717/photo/luxury-resort.jpg?s=612x612&w=0&k=20&c=cODMSPbYyrn1FHake1xYz9M8r15iOfGz9Aosy9Db7mI=",
+                "hotelReviews": ["Good hotel", "Nice hotel"],
+                "hotelRating": 4
+            },
+            {
+                "hotelName": "Luxury Haven",
+                "hotelAddress": "Colaba, Mumbai",
+                "hotelUserName": "Mumbai02",
+                "hotelPassword": "Luxury@456",
+                "hotelState": "Maharashtra",
+                "hotelPincode": "400002",
+                "hotelImg": "https://media.istockphoto.com/id/472899538/photo/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab.jpg?s=612x612&w=0&k=20&c=rz-WSe_6gKfkID6EL9yxCdN_UIMkXUBsr67884j-X9o=",
+                "hotelReviews": ["Excellent service", "Beautiful rooms"],
+                "hotelRating": 5
+            },
+            {
+                "hotelName": "Cityscape Suites",
+                "hotelAddress": "Andheri, Mumbai",
+                "hotelUserName": "Mumbai03",
+                "hotelPassword": "City@789",
+                "hotelState": "Maharashtra",
+                "hotelPincode": "400003",
+                "hotelImg": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/464303942.jpg?k=24e506ebac37b9faee6d31c754f97af1b1362355fc4a28cf7bb4ec72624cfc5d&o=&hp=1",
+                "hotelReviews": ["Great location", "Friendly staff"],
+                "hotelRating": 4.5
+            },
+            {
+                "hotelName": "Harbor View Residency",
+                "hotelAddress": "Colaba, Mumbai",
+                "hotelUserName": "Mumbai04",
+                "hotelPassword": "Harbor@101",
+                "hotelState": "Maharashtra",
+                "hotelPincode": "400004",
+                "hotelImg": "https://www.ihcltata.com/content/dam/luxury/hotels/Taj_Lands_End_Mumbai/images/4x3/R&S_WOGLI_Exterior-Master.jpg",
+                "hotelReviews": ["Scenic views", "Comfortable stay"],
+                "hotelRating": 4.2
+            },
+            {
+                "hotelName": "Sunshine Suites",
+                "hotelAddress": "Bandra, Mumbai",
+                "hotelUserName": "Mumbai05",
+                "hotelPassword": "Sunshine@202",
+                "hotelState": "Maharashtra",
+                "hotelPincode": "400005",
+                "hotelImg": "https://www.tourmyindia.com/blog//wp-content/uploads/2018/06/Hotels-in-India.jpg",
+                "hotelReviews": ["Bright and spacious rooms", "Good amenities"],
+                "hotelRating": 4.3
+            }
+        ]
+    },
+    {
+        "cityName": "Pune",
+        "cityImg":"https://www.sobha.com/blog/wp-content/uploads/2023/03/best-places-to-live-in-pune.jpg",
+        "hotelList": [
+          {
+            "hotelName": "Pune Palace",
+            "hotelAddress": "Koregaon Park, Pune",
+            "hotelUserName": "Pune01",
+            "hotelPassword": "Pune@123",
+            "hotelState": "Maharashtra",
+            "hotelPincode": "411001",
+            "hotelImg": "https://m.rediff.com/money/2008/may/28jwhotel.jpg",
+            "hotelReviews": ["Great experience", "Comfortable stay"],
+            "hotelRating": 4.5
+          },
+          {
+            "hotelName": "City View Inn",
+            "hotelAddress": "Shivajinagar, Pune",
+            "hotelUserName": "Pune02",
+            "hotelPassword": "Pune@456",
+            "hotelState": "Maharashtra",
+            "hotelPincode": "411002",
+            "hotelImg": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/12/a7/6e/hotel-facade.jpg?w=1200&h=-1&s=1",
+            "hotelReviews": ["Excellent service", "Clean rooms"],
+            "hotelRating": 4.2
+          },
+          {
+            "hotelName": "Green Oasis Resort",
+            "hotelAddress": "Hadapsar, Pune",
+            "hotelUserName": "Pune03",
+            "hotelPassword": "Pune@789",
+            "hotelState": "Maharashtra",
+            "hotelPincode": "411003",
+            "hotelImg": "https://pix10.agoda.net/hotelImages/517511/0/0746164df073b6c9c44a341607f0b186.jpg?ca=0&ce=1&s=702x392",
+            "hotelReviews": ["Beautiful surroundings", "Relaxing atmosphere"],
+            "hotelRating": 4.7
+          },
+          {
+            "hotelName": "Pune Grand Plaza",
+            "hotelAddress": "Baner, Pune",
+            "hotelUserName": "Pune04",
+            "hotelPassword": "Pune@101",
+            "hotelState": "Maharashtra",
+            "hotelPincode": "411004",
+            "hotelImg": "https://cf.bstatic.com/xdata/images/hotel/270x200/54360345.jpg?k=6bcd6c79b709827ecd26dc27675dff1a9b08d5be0bb35433beb163d4a45f6503&o=",
+            "hotelReviews": ["Friendly staff", "Convenient location"],
+            "hotelRating": 4.0
+          }
+        ]
+    },
+    {
+        "cityName": "Delhi",
+        "cityImg" : "https://cdn.britannica.com/37/189837-050-F0AF383E/New-Delhi-India-War-Memorial-arch-Sir.jpg",
+        "hotelList": [
+            {
+                "hotelName": "Grand Plaza Hotel",
+                "hotelAddress": "Connaught Place, Delhi",
+                "hotelUserName": "Delhi01",
+                "hotelPassword": "Delhi@123",
+                "hotelState": "Delhi",
+                "hotelPincode": "110001",
+                "hotelImg": "https://media.istockphoto.com/id/472899538/photo/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab.jpg?s=612x612&w=0&k=20&c=rz-WSe_6gKfkID6EL9yxCdN_UIMkXUBsr67884j-X9o=",
+                "hotelReviews": ["Excellent stay", "Friendly staff"],
+                "hotelRating": 4.5
+            },
+            {
+                "hotelName": "Royal Residency",
+                "hotelAddress": "Karol Bagh, Delhi",
+                "hotelUserName": "Delhi02",
+                "hotelPassword": "Delhi@456",
+                "hotelState": "Delhi",
+                "hotelPincode": "110005",
+                "hotelImg": "https://media.istockphoto.com/id/104731717/photo/luxury-resort.jpg?s=612x612&w=0&k=20&c=cODMSPbYyrn1FHake1xYz9M8r15iOfGz9Aosy9Db7mI=",
+                "hotelReviews": ["Comfortable rooms", "Great service"],
+                "hotelRating": 4.2
+            },
+            {
+                "hotelName": "Sunrise Inn",
+                "hotelAddress": "Paharganj, Delhi",
+                "hotelUserName": "Delhi03",
+                "hotelPassword": "Delhi@789",
+                "hotelState": "Delhi",
+                "hotelPincode": "110055",
+                "hotelImg": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/07/f1/5e/exterior.jpg?w=1200&h=-1&s=1",
+                "hotelReviews": ["Affordable prices", "Clean rooms"],
+                "hotelRating": 3.8
+            }
+        ]
+    },
+    {
+        "cityName": "Chennai",
+        "cityImg" : "https://upload.wikimedia.org/wikipedia/commons/d/d9/Chennai_-_bird%27s-eye_view.jpg",
+        "hotelList": [
+          {
+            "hotelName": "Chennai Palace",
+            "hotelAddress": "Anna Nagar, Chennai",
+            "hotelUserName": "Chennai01",
+            "hotelPassword": "Chennai@123",
+            "hotelState": "Tamil Nadu",
+            "hotelPincode": "600001",
+            "hotelImg": "https://www.outthere.travel/wp-content/uploads/2020/12/Taj-Mahal-Palace-1.jpg",
+            "hotelReviews": ["Excellent stay", "Great service"],
+            "hotelRating": 4.5
+          },
+          {
+            "hotelName": "Marina View Hotel",
+            "hotelAddress": "Marina Beach, Chennai",
+            "hotelUserName": "Chennai02",
+            "hotelPassword": "Chennai@456",
+            "hotelState": "Tamil Nadu",
+            "hotelPincode": "600002",
+            "hotelImg": "https://media.istockphoto.com/id/472899538/photo/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab.jpg?s=612x612&w=0&k=20&c=rz-WSe_6gKfkID6EL9yxCdN_UIMkXUBsr67884j-X9o=",
+            "hotelReviews": ["Comfortable rooms", "Friendly staff"],
+            "hotelRating": 4.2
+          }
+        ]
+    },
+    {
+        "cityName": "Bangalore",
+        "cityImg" : "https://www.thehosteller.com/_next/image?url=https%3A%2F%2Fstatic.thehosteller.com%2Fhostel%2Fimages%2FCover%20(1).jpg%2FCover%20(1)-1690261803767.jpg&w=2048&q=75",
+        "hotelList": [
+          {
+            "hotelName": "Bangalore Heights",
+            "hotelAddress": "MG Road, Bangalore",
+            "hotelUserName": "Bangalore01",
+            "hotelPassword": "Bangalore@123",
+            "hotelState": "Karnataka",
+            "hotelPincode": "560001",
+            "hotelImg": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/07/f1/5e/exterior.jpg?w=1200&h=-1&s=1",
+            "hotelReviews": ["Spacious rooms", "Modern amenities"],
+            "hotelRating": 4.4
+          }
+        ]
+    },
+    {
+        "cityName": "Hyderabad",
+        "cityImg" : "https://www.mistay.in/travel-blog/content/images/2023/03/Hyderabad.jpg",
+        "hotelList": [
+          {
+            "hotelName": "Hyderabad Grand",
+            "hotelAddress": "Banjara Hills, Hyderabad",
+            "hotelUserName": "Hyderabad01",
+            "hotelPassword": "Hyderabad@123",
+            "hotelState": "Telangana",
+            "hotelPincode": "500001",
+            "hotelImg": "https://media.istockphoto.com/id/472899538/photo/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab.jpg?s=612x612&w=0&k=20&c=rz-WSe_6gKfkID6EL9yxCdN_UIMkXUBsr67884j-X9o=",
+            "hotelReviews": ["Luxurious stay", "Excellent hospitality"],
+            "hotelRating": 4.7
+          }
+        ]
+    },
+    {
+        "cityName": "Nagpur",
+        "cityImg" : "https://cdn.crn.in/wp-content/uploads/2019/07/12104951/Nagpur.jpg",
+        "hotelList": [
+            {
+                "hotelName": "Sunshine Inn",
+                "hotelAddress": "Dharampeth, Nagpur",
+                "hotelUserName": "Nagpur01",
+                "hotelPassword": "Nagpur@123",
+                "hotelState": "Maharashtra",
+                "hotelPincode": "440001",
+                "hotelImg": "https://www.outthere.travel/wp-content/uploads/2020/12/Taj-Mahal-Palace-1.jpg",
+                "hotelReviews": ["Comfortable stay", "Excellent service"],
+                "hotelRating": 4.2
+            }
+        ]
+    },
+    {
+        "cityName": "Bhopal",
+        "cityImg" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/BadaTalaabBhopal3.jpg/800px-BadaTalaabBhopal3.jpg",
+        "hotelList": [
+            {
+                "hotelName": "Bhopal Grand Inn",
+                "hotelAddress": "MP Nagar, Bhopal",
+                "hotelUserName": "Bhopal01",
+                "hotelPassword": "Bhopal@123",
+                "hotelState": "Madhya Pradesh",
+                "hotelPincode": "462001",
+                "hotelImg": "https://media.istockphoto.com/id/104731717/photo/luxury-resort.jpg?s=612x612&w=0&k=20&c=cODMSPbYyrn1FHake1xYz9M8r15iOfGz9Aosy9Db7mI=",
+                "hotelReviews": ["Modern facilities", "Friendly staff"],
+                "hotelRating": 4.1
+            }
+        ]
+    },
+    {
+        "cityName": "Manali",
+        "cityImg" : "https://www.indiadrivertours.com/wp-content/uploads/2017/06/tpkg-manalitour.jpg",
+        "hotelList": [
+            {
+                "hotelName": "Snow Peaks Resort",
+                "hotelAddress": "Old Manali, Manali",
+                "hotelUserName": "Manali01",
+                "hotelPassword": "Manali@123",
+                "hotelState": "Himachal Pradesh",
+                "hotelPincode": "175131",
+                "hotelImg": "https://media.cnn.com/api/v1/images/stellar/prod/171122165337-ultimate-india-hotels-wildflower-hall-shimla-in-the-himalayas-an-oberoi-resort.jpg?q=w_4500,h_3000,x_0,y_0,c_fill",
+                "hotelReviews": ["Breathtaking views", "Cozy rooms"],
+                "hotelRating": 4.7
+            }
+        ]
+    }           
+]
