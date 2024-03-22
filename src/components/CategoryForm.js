@@ -148,6 +148,25 @@ export default function CategoryForm({
             </RadioGroup>
           </FormControl>
         </Grid>
+        {!isFromLogin && (
+          <Grid item xs={12}>
+            <TextField
+              required
+              id="key"
+              label="Authenticate Key"
+              fullWidth
+              autoComplete="cc-exp"
+              variant="standard"
+              value={categoryInfo?.key}
+              onChange={(e) =>
+                setCategoryInfo({
+                  ...categoryInfo,
+                  key: e.target.value,
+                })
+              }
+            />
+          </Grid>
+        )}
         <Grid item xs={12}>
           <Button
             component="label"

@@ -61,3 +61,7 @@ h1 {
   height: 50px !important;
   width: 50px !important;
 }
+
+.css-1yiask1-MuiPaper-root-MuiCard-root{
+  border-radius: 10% !important;
+}

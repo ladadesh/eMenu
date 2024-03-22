@@ -18,7 +18,7 @@ function Header() {
             variant="h6"
             noWrap
             component="a"
-            onClick={() => navigate("/eway-clone")}
+            onClick={() => navigate("/emenu")}
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -29,7 +29,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            Eway-Scan
+            EMenu
           </Typography>
         </Toolbar>
       </Container>

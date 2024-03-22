@@ -11,6 +11,7 @@ const BoxComponent = ({
   isFromCategory,
   isFromMenu,
   isFromLogin,
+  isFromPopup,
 }) => {
   const getName = (item) => {
     if (isFromCity) {
@@ -54,7 +55,7 @@ const BoxComponent = ({
       </h2>
       <Grid container spacing={2} style={{ marginLeft: "20px" }}>
         {data.map((item, index) => (
-          <Grid item xs={isFromMenu ? 4 : 2} key={index}>
+          <Grid item xs={isFromPopup ? 12 : isFromMenu ? 4 : 2} key={index}>
             <MediaCard
               name={getName(item)}
               imgUrl={getUrl(item)}
@@ -68,6 +69,7 @@ const BoxComponent = ({
               price={item.price}
               item={item}
               isFromLogin={isFromLogin}
+              isFromPopup={isFromPopup}
             />
           </Grid>
         ))}

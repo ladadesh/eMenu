@@ -24,6 +24,7 @@ export default function MediaCard({
   price,
   item,
   isFromLogin,
+  isFromPopup,
 }) {
   const getCardheight = () => {
     if (isFromCity) {
@@ -33,7 +34,7 @@ export default function MediaCard({
     } else if (isFromMenu) {
       return 350;
     } else {
-      return 250;
+      return 200;
     }
   };
 
@@ -45,9 +46,9 @@ export default function MediaCard({
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            minHeight: 215,
+            minHeight: isFromPopup ? 200 : 215,
             minWidth: 440,
-            maxWidth: 250,
+            maxWidth: isFromPopup ? 200 : 250,
           }}
         >
           <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -74,7 +75,7 @@ export default function MediaCard({
                 component="div"
                 style={{ fontWeight: 600 }}
               >
-                ₹{price + 100}
+                ₹{price}
               </Typography>
               <Typography
                 variant="subtitle1"
@@ -88,30 +89,34 @@ export default function MediaCard({
             {isFromLogin ? (
               <SpeedDial handleButtonClick={handleButtonClick} item={item} />
             ) : (
-              <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
-                <CardActions
-                  style={{ position: "absolute", bottom: "0", left: "0" }}
+              !isFromPopup && (
+                <Box
+                  sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}
                 >
-                  <Button
-                    style={{ backgroundColor: "#ff9900" }}
-                    endIcon={<LocalDiningIcon />}
-                    onClick={() =>
-                      handleButtonClick(
-                        name,
-                        isFromCity,
-                        isFromHotel,
-                        isFromCategory,
-                        isFromMenu,
-                        item
-                      )
-                    }
-                    size="small"
-                    variant="contained"
+                  <CardActions
+                    style={{ position: "absolute", bottom: "0", left: "0" }}
                   >
-                    Add Item
-                  </Button>
-                </CardActions>
-              </Box>
+                    <Button
+                      style={{ backgroundColor: "#ff9900" }}
+                      endIcon={<LocalDiningIcon />}
+                      onClick={() =>
+                        handleButtonClick(
+                          name,
+                          isFromCity,
+                          isFromHotel,
+                          isFromCategory,
+                          isFromMenu,
+                          item
+                        )
+                      }
+                      size="small"
+                      variant="contained"
+                    >
+                      Add Item
+                    </Button>
+                  </CardActions>
+                </Box>
+              )
             )}
           </Box>
           <CardMedia
@@ -127,12 +132,18 @@ export default function MediaCard({
           sx={{
             maxWidth: 200,
             minWidth: 200,
-            maxHeight: 300,
+            maxHeight: isHome ? 200 : 300,
             minHeight: getCardheight(),
+          }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
           }}
         >
           <CardMedia
-            sx={{ height: 140, width: 200 }}
+            sx={{ height: isHome ? 120 : 140, width: isHome ? 120 : 200 }}
             image={imgUrl}
             title={name}
             className="card--image"
@@ -153,14 +164,7 @@ export default function MediaCard({
                   alignItems: "center",
                   justifyContent: "center",
                 }}
-              >
-                <Rating
-                  name="read-only"
-                  precision={0.5}
-                  value={rating}
-                  readOnly
-                />
-              </div>
+              ></div>
             )}
           </CardContent>
           {(isFromCity || isFromHotel || isFromCategory) && (

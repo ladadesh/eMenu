@@ -45,7 +45,14 @@ export default function StoreLogin() {
       userName: data.get("hotelUsername"),
       password: data.get("password"),
     };
-    let checkLogin = userData.find(
+
+    let userListFinal = userData;
+    let localHotelData = JSON.parse(localStorage.getItem("hotelData"));
+    if (localHotelData) {
+      userListFinal = userListFinal.concat(localHotelData);
+    }
+
+    let checkLogin = userListFinal.find(
       (item) =>
         item.userName === userObject.userName &&
         item.password === userObject.password

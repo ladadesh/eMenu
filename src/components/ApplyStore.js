@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import HotelForm from "./HotelForm";
 import CategoryForm from "./CategoryForm";
+import Alert from "@mui/material/Alert";
 
 const steps = ["Hotel Form", "Category Form"];
 
@@ -32,15 +33,23 @@ export default function ApplyStore() {
     price: 0,
     menuType: "non-veg",
     menuImg: "",
+    key: "",
   });
+  const [failedLogin, setFailedLogin] = React.useState(false);
 
   const handleNext = (isHotelAdd) => {
+    if (isHotelAdd && categoryInfo.key !== "abcd") {
+      setFailedLogin(true);
+      return;
+    } else {
+      setActiveStep(activeStep + 1);
+    }
     if (isHotelAdd) {
       let hotelData = {
         hotelName: hotelInfo.hotelName,
         hotelAddress: hotelInfo.hotelAddress,
-        hotelUserName: hotelInfo.hotelUsername,
-        hotelPassword: hotelInfo.hotelPassword,
+        userName: hotelInfo.hotelUsername,
+        password: hotelInfo.hotelPassword,
         hotelState: "Maharashtra",
         hotelPincode: "400001",
         hotelImg: hotelInfo.hotelImg,
@@ -48,7 +57,7 @@ export default function ApplyStore() {
         hotelRating: 4,
         hotelCity: hotelInfo.hotelCity,
       };
-      let localHotelData = JSON.parse(localStorage.getItem("saveData"));
+      let localHotelData = JSON.parse(localStorage.getItem("hotelData"));
       if (localHotelData) {
         localStorage.setItem(
           "hotelData",
@@ -82,7 +91,6 @@ export default function ApplyStore() {
 
       localStorage.setItem("saveDataFromApply", JSON.stringify(saveData));
     }
-    setActiveStep(activeStep + 1);
   };
 
   function generateRandomString(length) {
@@ -120,6 +128,11 @@ export default function ApplyStore() {
 
   return (
     <React.Fragment>
+      {failedLogin && (
+        <Alert severity="error" onClose={() => setFailedLogin(false)}>
+          You've entered wrong Authenticate Key.
+        </Alert>
+      )}
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper
           variant="outlined"

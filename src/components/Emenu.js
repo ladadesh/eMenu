@@ -14,6 +14,29 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Rating from "@mui/material/Rating";
 import TextField from "@mui/material/TextField";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "40%",
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  pt: 2,
+  px: 4,
+  pb: 3,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
+};
 
 const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
   const navigate = useNavigate();
@@ -35,6 +58,8 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
     menuImg: "",
   });
   const [hotelReviews, setHotelReviews] = useState({});
+  const [openModal, setOpenModal] = useState(false);
+  const [isPlaceOrder, setIsPlaceOrder] = useState(false);
 
   useEffect(() => {
     if (isFromLogin) {
@@ -193,10 +218,19 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
           ...saveData,
           addedItems: saveData.addedItems.concat([categoryData]),
         };
+        saveData.addedItems = removeDuplicates(saveData.addedItems, "name");
       }
       localStorage.setItem("saveData", JSON.stringify(saveData));
     }
   };
+
+  function removeDuplicates(array, propertyName) {
+    let seen = {};
+    return array.filter((item) => {
+      let property = item[propertyName];
+      return seen.hasOwnProperty(property) ? false : (seen[property] = true);
+    });
+  }
 
   function generateRandomString(length) {
     const characters =
@@ -346,9 +380,7 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
           icon={<ArrowBackIcon />}
           label="Back"
           onClick={() =>
-            isFromLogin && showCategory
-              ? navigate("/eway-clone")
-              : handleBackClick()
+            isFromLogin && showCategory ? navigate("/emenu") : handleBackClick()
           }
           color="primary"
           variant="outlined"
@@ -409,7 +441,7 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
                   borderRadius: "5px",
                   transform: 0.6,
                 }}
-                value={hotelReviews.ratings}
+                value={hotelReviews?.ratings}
                 size="large"
                 sx={{ mt: 1 }}
                 name="read-only"
@@ -425,7 +457,7 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
               }}
             >
               Reviews :{" "}
-              {hotelReviews.reviews.map((item, index) => (
+              {hotelReviews?.reviews?.map((item, index) => (
                 <Chip
                   style={{ margin: "0 2px" }}
                   key={index}
@@ -492,9 +524,72 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
           endIcon={<AddShoppingCartIcon />}
           size="small"
           variant="contained"
+          onClick={() => setOpenModal(true)}
         >
           {selectedMenu.length} Items
         </Button>
+      )}
+      {openModal && (
+        <Modal
+          open={openModal}
+          onClose={() => {
+            setOpenModal(false);
+            setIsPlaceOrder(false);
+          }}
+          aria-labelledby="parent-modal-title"
+          aria-describedby="parent-modal-description"
+        >
+          <Box sx={{ ...style }}>
+            <h2>Order Now</h2>
+            {!isPlaceOrder ? (
+              selectedMenu.map((item, index) => (
+                <Card
+                  style={{ position: "relative" }}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    minHeight: 10,
+                    minWidth: 400,
+                    maxWidth: 200,
+                    mt: 1,
+                  }}
+                  key={index}
+                >
+                  <Box sx={{ display: "flex", flexDirection: "column" }}>
+                    <CardContent sx={{}}>
+                      <Typography component="div" variant="h5">
+                        {item.name}
+                      </Typography>
+                      <Typography
+                        variant="subtitle1"
+                        color="text.secondary"
+                        component="div"
+                        style={{ fontWeight: 600 }}
+                      >
+                        ₹{item.price}
+                      </Typography>
+                    </CardContent>
+                  </Box>
+                  <CardMedia
+                    className="card--image"
+                    component="img"
+                    sx={{ width: 171, height: 150 }}
+                    image={item.img}
+                    alt={item.name}
+                  />
+                </Card>
+              ))
+            ) : (
+              <h3>Order Placed...</h3>
+            )}
+
+            {!isPlaceOrder && (
+              <Button sx={{ mt: 1 }} onClick={() => setIsPlaceOrder(true)}>
+                Place Order
+              </Button>
+            )}
+          </Box>
+        </Modal>
       )}
 
       {showCategory &&

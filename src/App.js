@@ -15,7 +15,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/eway-clone" exact={true} Component={Home} />
+          <Route path="/emenu" exact={true} Component={Home} />
           <Route path="/qr" Component={QRCode} />
           <Route path="/list" Component={Emenu} />
           <Route path="/login" Component={StoreLogin} />
