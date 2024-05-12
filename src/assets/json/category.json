@@ -1830,7 +1830,8 @@
             "Bangalore01",
             "Hyderabad01",
             "Bhopal01",
-            "Manali01"
+            "Manali01",
+            "Kolhapur01"
         ],
         "categoryImg": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/129490/the-gothamist-prosciutto-burrata-sandwich-kit-4-pack.4238b1e274d50b6e09d0b488aebe64bd.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
         "menuList": [
@@ -2667,7 +2668,8 @@
                     "Mumbai05",
                     "Manali01",
                     "Mumbai01",
-                    "Hyderabad01"
+                    "Hyderabad01",
+                    "Kolhapur01"
                 ],
                 "categoryName": "Sandwiches"
             },
@@ -2702,7 +2704,8 @@
             "Delhi03",
             "Chennai01",
             "Chennai02",
-            "Bangalore01"
+            "Bangalore01",
+            "Kolhapur01"
         ],
         "categoryImg": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/95387/japanese-milk-bread.5c3e3677db6b145b659e702af3098337.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
         "menuList": [
@@ -2887,7 +2890,8 @@
                 "hotelUserName": [
                     "Delhi01",
                     "Bhopal01",
-                    "Delhi02"
+                    "Delhi02",
+                    "Kolhapur01"
                 ],
                 "categoryName": "Breads"
             },
@@ -2951,7 +2955,8 @@
                     "Mumbai01",
                     "Hyderabad01",
                     "Mumbai04",
-                    "Mumbai03"
+                    "Mumbai03",
+                    "Kolhapur01"
                 ],
                 "categoryName": "Breads"
             },
@@ -5093,7 +5098,8 @@
             "Bangalore01",
             "Hyderabad01",
             "Nagpur01",
-            "Bhopal01"
+            "Bhopal01",
+            "Ichalkaranji01"
         ],
         "categoryImg": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/95838/taste-of-kentucky-ice-cream-collection-6-pints.dc03a97b15828e9a01e81efc0b309d4d.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
         "menuList": [
@@ -5108,7 +5114,8 @@
                 "hotelUserName": [
                     "Nagpur01",
                     "Pune03",
-                    "Delhi03"
+                    "Delhi03",
+                    "Ichalkaranji01"
                 ],
                 "categoryName": "Ice-cream"
             },
@@ -5533,7 +5540,8 @@
             "Chennai01",
             "Chennai02",
             "Hyderabad01",
-            "Nagpur01"
+            "Nagpur01",
+            "Ichalkaranji01"
         ],
         "categoryImg": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/131532/dark-chocolate-truffle-collection-16-pieces.4109f4f80d9d9ddf81d7b704424245f8.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
         "menuList": [
@@ -6432,7 +6440,8 @@
                 "hotelUserName": [
                     "Pune03",
                     "Mumbai03",
-                    "Delhi01"
+                    "Delhi01",
+                    "Ichalkaranji01"
                 ],
                 "categoryName": "Chocolates"
             },
@@ -6447,7 +6456,8 @@
                 "hotelUserName": [
                     "Hyderabad01",
                     "Mumbai04",
-                    "Chennai01"
+                    "Chennai01",
+                    "Ichalkaranji01"
                 ],
                 "categoryName": "Chocolates"
             }

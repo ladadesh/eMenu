@@ -5,7 +5,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Rating from "@mui/material/Rating";
 import LocalDiningIcon from "@mui/icons-material/LocalDining";
 import Box from "@mui/material/Box";
 import SpeedDial from "./SpeedDial";
@@ -56,19 +55,6 @@ export default function MediaCard({
               <Typography component="div" variant="h5">
                 {name}
               </Typography>
-              <Rating
-                style={{
-                  border: "1px solid #faaf0",
-                  borderRadius: "5px",
-                  transform: 0.6,
-                }}
-                size="small"
-                sx={{ mt: 1 }}
-                name="read-only"
-                value={rating}
-                precision={0.5}
-                readOnly
-              />
               <Typography
                 variant="subtitle1"
                 color="text.secondary"

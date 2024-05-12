@@ -32,7 +32,7 @@ export default function HotelForm({ hotelInfo, setHotelInfo }) {
 
   React.useEffect(() => {
     setCityData(data.map((item) => item.cityName));
-  }, [data]);
+  }, []);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 

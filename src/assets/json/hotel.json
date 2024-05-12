@@ -229,14 +229,14 @@
         ]
     },
     {
-        "cityName": "Bhopal",
+        "cityName": "Kolhapur",
         "cityImg" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/BadaTalaabBhopal3.jpg/800px-BadaTalaabBhopal3.jpg",
         "hotelList": [
             {
-                "hotelName": "Bhopal Grand Inn",
-                "hotelAddress": "MP Nagar, Bhopal",
-                "hotelUserName": "Bhopal01",
-                "hotelPassword": "Bhopal@123",
+                "hotelName": "Kolhapur Grand Inn",
+                "hotelAddress": "MP Nagar, Kolhapur",
+                "hotelUserName": "Kolhapur01",
+                "hotelPassword": "Kolhapur@123",
                 "hotelState": "Madhya Pradesh",
                 "hotelPincode": "462001",
                 "hotelImg": "https://media.istockphoto.com/id/104731717/photo/luxury-resort.jpg?s=612x612&w=0&k=20&c=cODMSPbYyrn1FHake1xYz9M8r15iOfGz9Aosy9Db7mI=",
@@ -246,14 +246,14 @@
         ]
     },
     {
-        "cityName": "Manali",
-        "cityImg" : "https://www.indiadrivertours.com/wp-content/uploads/2017/06/tpkg-manalitour.jpg",
+        "cityName": "Ichalkaranji",
+        "cityImg" : "https://upload.wikimedia.org/wikipedia/commons/c/c6/Rajwada.jpg",
         "hotelList": [
             {
-                "hotelName": "Snow Peaks Resort",
-                "hotelAddress": "Old Manali, Manali",
-                "hotelUserName": "Manali01",
-                "hotelPassword": "Manali@123",
+                "hotelName": "Peaks Resort",
+                "hotelAddress": "Old Ichalkaranji, Ichalkaranji",
+                "hotelUserName": "Ichalkaranji01",
+                "hotelPassword": "Ichalkaranji@123",
                 "hotelState": "Himachal Pradesh",
                 "hotelPincode": "175131",
                 "hotelImg": "https://media.cnn.com/api/v1/images/stellar/prod/171122165337-ultimate-india-hotels-wildflower-hall-shimla-in-the-himalayas-an-oberoi-resort.jpg?q=w_4500,h_3000,x_0,y_0,c_fill",

@@ -12,6 +12,13 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import userData from "../assets/json/userData.json";
 import Emenu from "./Emenu";
 import Alert from "@mui/material/Alert";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import FormControl from "@mui/material/FormControl";
+import IconButton from "@mui/material/IconButton";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 function Copyright(props) {
   return (
@@ -37,6 +44,13 @@ const defaultTheme = createTheme();
 export default function StoreLogin() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(null);
   const [failedLogin, setFailedLogin] = React.useState(false);
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -136,16 +150,28 @@ export default function StoreLogin() {
                     name="hotelUsername"
                     autoFocus
                   />
-                  <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    name="password"
-                    label="Password"
-                    type="password"
-                    id="password"
-                    autoComplete="current-password"
-                  />
+                  <FormControl fullWidth variant="outlined">
+                    <InputLabel htmlFor="standard-adornment-password">
+                      Password
+                    </InputLabel>
+                    <OutlinedInput
+                      type={showPassword ? "text" : "password"}
+                      name="password"
+                      label="Password"
+                      id="password"
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                          >
+                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                    />
+                  </FormControl>
                   <Button
                     type="submit"
                     fullWidth

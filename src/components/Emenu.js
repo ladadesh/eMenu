@@ -54,7 +54,7 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
     menuName: "",
     menuDescription: "",
     price: 0,
-    menuType: "non-veg",
+    menuType: "veg",
     menuImg: "",
   });
   const [hotelReviews, setHotelReviews] = useState({});
@@ -117,12 +117,18 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
         ratings: item.hotelRating,
         reviews: item.hotelReviews,
       });
-      getCategoryItems(item.hotelUserName);
+      getCategoryItems(item.hotelUserName ? item.hotelUserName : item.userName);
     } else if (isFromCategory) {
-      let selectedCatagoryOnClick = [...categoryHotelData].find(
+      let finalCategoryHotelData = [];
+      if (isFromLogin) {
+        finalCategoryHotelData = getCategoryItems(hotelUsernameFromLogin, true);
+      } else {
+        finalCategoryHotelData = categoryHotelData;
+      }
+
+      let selectedCatagoryOnClick = [...finalCategoryHotelData].find(
         (item) => item.categoryName === name
       );
-
       setSelectedCategory(selectedCatagoryOnClick);
       setShowMenu(true);
       setShowCategory(false);
@@ -218,13 +224,24 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
           ...saveData,
           addedItems: saveData.addedItems.concat([categoryData]),
         };
-        saveData.addedItems = removeDuplicates(saveData.addedItems, "name");
+        saveData.addedItems = removeDuplicatesWithName(
+          saveData.addedItems,
+          "name"
+        );
       }
+      setCategoryInfo({
+        categoryName: "",
+        menuName: "",
+        menuDescription: "",
+        price: 0,
+        menuType: "veg",
+        menuImg: "",
+      });
       localStorage.setItem("saveData", JSON.stringify(saveData));
     }
   };
 
-  function removeDuplicates(array, propertyName) {
+  function removeDuplicatesWithName(array, propertyName) {
     let seen = {};
     return array.filter((item) => {
       let property = item[propertyName];
@@ -245,8 +262,9 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
     return randomString;
   }
 
-  const getCategoryItems = (userName) => {
+  const getCategoryItems = (userName, fromhotelClick) => {
     let finalCategoryData = [];
+    let saveDataFromLocal = JSON.parse(localStorage.getItem("saveData"));
 
     categoryData.forEach((category) => {
       if (category.hotelUserName.includes(userName)) {
@@ -260,7 +278,38 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
       }
     });
 
-    let saveDataFromLocal = JSON.parse(localStorage.getItem("saveData"));
+    let addedMenuData = JSON.parse(localStorage.getItem("saveDataFromApply"));
+    if (finalCategoryData.length === 0 && addedMenuData.length > 0) {
+      let finalAddedItems = [...addedMenuData];
+      saveDataFromLocal?.addedItems?.length > 0 &&
+        saveDataFromLocal?.addedItems.forEach((item1) => {
+          addedMenuData.forEach((item2) => {
+            if (
+              item1.categoryName == item2.categoryName &&
+              item2.hotelUserName?.includes(item1.hotelUserName)
+            ) {
+              finalAddedItems.push({ ...item1 });
+            }
+
+            if (item2.hotelUserName?.includes(item1.hotelUserName)) {
+              finalAddedItems.push({ ...item1 });
+            }
+          });
+        });
+      finalAddedItems.map((item) => {
+        if (
+          item.hotelUserName[0] === userName ||
+          item.hotelUserName === userName
+        ) {
+          let addedCategory = categoryData.filter(
+            (cate) => cate.categoryName === item.categoryName
+          );
+
+          addedCategory[0].menuList = [item];
+          finalCategoryData.push(addedCategory[0]);
+        }
+      });
+    }
 
     if (
       finalCategoryData.length > 0 &&
@@ -281,6 +330,7 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
       );
 
       if (addedItemsFromLocal.length > 0) {
+        addedItemsFromLocal = removeDuplicates(addedItemsFromLocal);
         //for added
         finalCategoryData.forEach((item1) => {
           addedItemsFromLocal.forEach((item2) => {
@@ -292,6 +342,7 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
       }
 
       if (deletedItemsFromLocal.length > 0) {
+        deletedItemsFromLocal = removeDuplicates(deletedItemsFromLocal);
         //for deletedItems
         finalCategoryData.forEach((item1) => {
           deletedItemsFromLocal.forEach((item2) => {
@@ -306,6 +357,8 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
       }
 
       if (editedItemsFromLocal.length > 0) {
+        editedItemsFromLocal = removeDuplicates(deletedItemsFromLocal);
+
         //for edited
         finalCategoryData.forEach((item1) => {
           editedItemsFromLocal.forEach((item2) => {
@@ -321,21 +374,34 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
       }
     }
 
-    let addedMenuData = JSON.parse(localStorage.getItem("saveDataFromApply"));
-    if (finalCategoryData.length === 0 && addedMenuData.length > 0) {
-      addedMenuData.map((item) => {
-        if (item.hotelUserName[0] === userName) {
-          let addedCategory = categoryData.filter(
-            (cate) => cate.categoryName === item.categoryName
-          );
-          addedCategory[0].menuList = [item];
-          finalCategoryData.push(addedCategory[0]);
-        }
-      });
+    finalCategoryData = finalFilterDuplicates(finalCategoryData);
+    if (fromhotelClick) {
+      return finalCategoryData;
     }
-
     setCategoryHotelData(finalCategoryData);
   };
+
+  function finalFilterDuplicates(arr) {
+    arr = arr.map((item) => {
+      if (item.menuList.length > 0) {
+        let finalMenuList = removeDuplicates(item.menuList);
+        return { ...item, menuList: finalMenuList };
+      }
+      return item;
+    });
+
+    return arr.filter(
+      (obj, index, self) =>
+        index === self.findIndex((t) => t.categoryName === obj.categoryName)
+    );
+  }
+
+  function removeDuplicates(arr) {
+    return arr.filter(
+      (obj, index, self) =>
+        index === self.findIndex((t) => t.id === obj.id && t.name === obj.name)
+    );
+  }
 
   function replaceObjectById(menuList, id, newObj) {
     const index = menuList.findIndex((item) => item.id === id);
@@ -372,6 +438,12 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
     }
   };
 
+  const getTotalPrice = () => {
+    let price = 0;
+    selectedMenu.map((item) => (price += Number(item.price)));
+    return price;
+  };
+
   return (
     <>
       {(selectedCity || isFromLogin) && (
@@ -380,7 +452,7 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
           icon={<ArrowBackIcon />}
           label="Back"
           onClick={() =>
-            isFromLogin && showCategory ? navigate("/emenu") : handleBackClick()
+            isFromLogin && showCategory ? navigate("/") : handleBackClick()
           }
           color="primary"
           variant="outlined"
@@ -441,6 +513,9 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
                   borderRadius: "5px",
                   transform: 0.6,
                 }}
+                onChange={(event, newValue) =>
+                  setHotelReviews({ ...hotelReviews, ratings: newValue })
+                }
                 value={hotelReviews?.ratings}
                 size="large"
                 sx={{ mt: 1 }}
@@ -497,7 +572,10 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
                 onClick={() =>
                   setHotelReviews({
                     ...hotelReviews,
-                    reviews: hotelReviews.reviews.concat([hotelReviews.review]),
+                    reviews:
+                      hotelReviews?.reviews?.length > 0
+                        ? hotelReviews.reviews.concat([hotelReviews.review])
+                        : [hotelReviews.review],
                     review: "",
                   })
                 }
@@ -542,43 +620,56 @@ const Emenu = ({ isFromLogin, hotelUsernameFromLogin }) => {
           <Box sx={{ ...style }}>
             <h2>Order Now</h2>
             {!isPlaceOrder ? (
-              selectedMenu.map((item, index) => (
-                <Card
-                  style={{ position: "relative" }}
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    minHeight: 10,
-                    minWidth: 400,
-                    maxWidth: 200,
-                    mt: 1,
-                  }}
-                  key={index}
+              <>
+                {selectedMenu.map((item, index) => (
+                  <Card
+                    style={{ position: "relative" }}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      minHeight: 10,
+                      minWidth: 400,
+                      maxWidth: 200,
+                      mt: 1,
+                    }}
+                    key={index}
+                  >
+                    <Box sx={{ display: "flex", flexDirection: "column" }}>
+                      <CardContent sx={{}}>
+                        <Typography component="div" variant="h5">
+                          {item.name}
+                        </Typography>
+                        <Typography
+                          variant="subtitle1"
+                          color="text.secondary"
+                          component="div"
+                          style={{ fontWeight: 600 }}
+                        >
+                          ₹{item.price}
+                        </Typography>
+                      </CardContent>
+                    </Box>
+                    <CardMedia
+                      className="card--image"
+                      component="img"
+                      sx={{ width: 171, height: 150 }}
+                      image={item.img}
+                      alt={item.name}
+                    />
+                  </Card>
+                ))}
+                <Paper
+                  style={{ padding: "10px", margin: "10px", width: "70%" }}
                 >
-                  <Box sx={{ display: "flex", flexDirection: "column" }}>
-                    <CardContent sx={{}}>
-                      <Typography component="div" variant="h5">
-                        {item.name}
-                      </Typography>
-                      <Typography
-                        variant="subtitle1"
-                        color="text.secondary"
-                        component="div"
-                        style={{ fontWeight: 600 }}
-                      >
-                        ₹{item.price}
-                      </Typography>
-                    </CardContent>
-                  </Box>
-                  <CardMedia
-                    className="card--image"
-                    component="img"
-                    sx={{ width: 171, height: 150 }}
-                    image={item.img}
-                    alt={item.name}
-                  />
-                </Card>
-              ))
+                  <Typography
+                    component="div"
+                    variant="h6"
+                    style={{ fontWeight: 600 }}
+                  >
+                    Total Price : ₹{getTotalPrice()}{" "}
+                  </Typography>
+                </Paper>
+              </>
             ) : (
               <h3>Order Placed...</h3>
             )}
